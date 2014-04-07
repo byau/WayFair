@@ -1,0 +1,52 @@
+﻿<Window x:Class="WayfairApp.UI.WayFair"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WayFair" Height="1062.8" Width="1205">
+    <Viewbox HorizontalAlignment="Left">
+        <Grid Width="1156" >
+            <Border  BorderBrush="#FF209DD8" BorderThickness="2,2,2,2" Margin="-405,3,1102,-3">
+                <Canvas Name="CanPonumber" Visibility="Visible" Width="400" Height="1000" HorizontalAlignment="Left">
+                    <Canvas.Style>
+                        <Style TargetType="{x:Type Canvas}">
+                            <Style.Triggers>
+                                <Trigger Property="IsVisible" Value="true">
+                                    <Trigger.EnterActions >
+                                        <BeginStoryboard >
+                                            <Storyboard >
+                                                <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" 
+																			From="400" 
+																			To="100" 
+																			Duration="0:0:0.1"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Canvas.Style>
+
+
+                    <Button Content=">>" Style="{StaticResource ResourceKey={x:Static ToolBar.ButtonStyleKey}}" Canvas.Right="-103" Width="56" Height="166" RenderTransformOrigin="2.543,0.34" Canvas.Top="121" Background="#FFE07D1A" Foreground="WhiteSmoke" FontSize="35" Canvas.Left="468" Click="Button_Click_2" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="180"/>
+                                <TranslateTransform X="-298.45" Y="314.45"/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                    </Button>
+                    <Label Content="POnumber" Canvas.Left="63" Canvas.Top="27" Width="229" Height="35" Style="{StaticResource lblConstant}" />
+                    <TextBox Height="33" Canvas.Left="92" TextWrapping="Wrap" Text="" Canvas.Top="67" Width="180" FontSize="20"/>
+                    <Label Content="Company" Canvas.Left="92" Canvas.Top="118" Width="180" Style="{StaticResource lblConstant}"/>
+                    <TextBox Height="33" Canvas.Left="90" TextWrapping="Wrap" Text="" Canvas.Top="158" Width="182" FontSize="20"/>
+                    <Label Content="Box Color" Canvas.Left="90" Canvas.Top="222" Width="180" Style="{StaticResource lblConstant}"/>
+                    <ComboBox Canvas.Left="92" Canvas.Top="260" Width="180" Height="39"/>
+                    <Label Content="Date" Canvas.Left="92" Canvas.Top="339" Width="180" Style="{StaticResource lblConstant}"/>
+                    <DatePicker Canvas.Left="92" Canvas.Top="386" Width="178" Height="33" FontSize="20"/>
+
+                </Canvas>
+            </Border>
+        </Grid>
+    </Viewbox>
+</Window>
